@@ -5,7 +5,7 @@ import dotenv from 'dotenv'
 dotenv.config({ path: './.env', });
 import { Server } from 'socket.io'
 import http from "http";
-
+import path from 'path'
 
 export const envMode = process.env.NODE_ENV?.trim() || 'DEVELOPMENT';
 const port = process.env.PORT || 5000;
