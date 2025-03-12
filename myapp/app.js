@@ -53,8 +53,13 @@ app.get('/', (req, res) => {
   res.send('Hello, World!');
 });
 
-
-// socket connection
+app.use(express.static(path.join(__dirname, "public"), {
+  setHeaders: (res, path) => {
+    if (path.endsWith(".js")) {
+      res.setHeader("Content-Type", "application/javascript");
+    }
+  },
+}));
 
 
 
